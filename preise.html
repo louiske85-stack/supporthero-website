@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Preise — SupportHero</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    html, body { background: #fff; }
+    .nav-wrapper { background: linear-gradient(180deg, #fff 0%, transparent 100%); }
+
+    /* ── HERO ── */
+    .pricing-hero {
+      padding: 80px 24px 56px;
+      text-align: center;
+      border-bottom: 1px solid #F1F5F9;
+    }
+    .pricing-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #6366F1;
+      margin-bottom: 20px;
+    }
+    .pricing-eyebrow-dot { width: 6px; height: 6px; background: #6366F1; border-radius: 50%; }
+    .pricing-hero h1 {
+      font-size: clamp(34px, 4.5vw, 56px);
+      font-weight: 800;
+      color: #0F172A;
+      letter-spacing: -0.025em;
+      margin-bottom: 14px;
+      line-height: 1.1;
+    }
+    .pricing-hero p {
+      font-size: 18px;
+      color: #64748B;
+      max-width: 520px;
+      margin: 0 auto 32px;
+      line-height: 1.6;
+    }
+
+    /* ── TOGGLE ── */
+    .billing-toggle {
+      display: inline-flex;
+      align-items: center;
+      background: #F1F5F9;
+      border-radius: 100px;
+      padding: 5px;
+    }
+    .toggle-btn {
+      padding: 8px 20px;
+      border-radius: 100px;
+      border: none;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+      background: transparent;
+      color: #64748B;
+      font-family: inherit;
+    }
+    .toggle-btn.active { background: #fff; color: #0F172A; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
+    .save-badge {
+      background: #DCFCE7;
+      color: #15803D;
+      font-size: 11px;
+      font-weight: 700;
+      border-radius: 100px;
+      padding: 3px 10px;
+      margin-left: 4px;
+    }
+
+    /* ── CONFIGURATOR ── */
+    .config-section { padding: 56px 24px 72px; }
+    .config-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 28px;
+      align-items: start;
+    }
+
+    /* Left panel */
+    .config-panel {
+      border: 1.5px solid #E2E8F0;
+      border-radius: 22px;
+      padding: 40px 40px 36px;
+      background: #fff;
+    }
+    .config-label {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #94A3B8;
+      margin-bottom: 28px;
+    }
+
+    /* Ticket display */
+    .ticket-display {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 32px;
+    }
+    .ticket-count {
+      font-size: 52px;
+      font-weight: 800;
+      color: #0F172A;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      transition: all 0.15s;
+    }
+    .ticket-unit {
+      font-size: 17px;
+      font-weight: 600;
+      color: #94A3B8;
+    }
+
+    /* Slider */
+    .slider-wrap { position: relative; margin-bottom: 16px; }
+    .slider-track-bg {
+      height: 6px;
+      background: #F1F5F9;
+      border-radius: 10px;
+      position: relative;
+    }
+    .slider-track-fill {
+      height: 6px;
+      background: linear-gradient(90deg, #818CF8, #6366F1);
+      border-radius: 10px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      transition: width 0.1s;
+    }
+    input[type=range].price-slider {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 6px;
+      background: transparent;
+      outline: none;
+      cursor: pointer;
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: 0;
+    }
+    input[type=range].price-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #6366F1;
+      box-shadow: 0 2px 8px rgba(99,102,241,0.4);
+      border: 3px solid #fff;
+      cursor: grab;
+      transition: box-shadow 0.15s, transform 0.1s;
+      margin-top: -9px;
+    }
+    input[type=range].price-slider::-webkit-slider-thumb:active {
+      cursor: grabbing;
+      transform: scale(1.15);
+      box-shadow: 0 4px 16px rgba(99,102,241,0.5);
+    }
+    input[type=range].price-slider::-moz-range-thumb {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #6366F1;
+      box-shadow: 0 2px 8px rgba(99,102,241,0.4);
+      border: 3px solid #fff;
+      cursor: grab;
+    }
+
+    /* Tick labels */
+    .slider-ticks {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 12px;
+    }
+    .slider-ticks span {
+      font-size: 11px;
+      color: #CBD5E1;
+      font-weight: 600;
+      text-align: center;
+    }
+    .slider-ticks span.active-tick { color: #6366F1; font-weight: 700; }
+
+    /* Config note */
+    .config-note {
+      font-size: 13px;
+      color: #94A3B8;
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid #F1F5F9;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .config-note svg { flex-shrink: 0; color: #CBD5E1; }
+
+    /* Right panel: price summary */
+    .price-summary {
+      border: 1.5px solid #6366F1;
+      border-radius: 22px;
+      padding: 32px 28px;
+      background: #fff;
+      position: sticky;
+      top: 96px;
+      box-shadow: 0 8px 32px rgba(99,102,241,0.12);
+    }
+    .summary-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #6366F1;
+      margin-bottom: 16px;
+    }
+    .summary-price {
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+      margin-bottom: 4px;
+    }
+    .summary-currency { font-size: 22px; font-weight: 700; color: #64748B; }
+    .summary-amount {
+      font-size: 52px;
+      font-weight: 800;
+      color: #0F172A;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      transition: all 0.15s;
+    }
+    .summary-period { font-size: 14px; color: #94A3B8; align-self: flex-end; padding-bottom: 6px; }
+    .summary-billed-note {
+      font-size: 12px;
+      color: #CBD5E1;
+      margin-bottom: 24px;
+    }
+    .summary-divider { height: 1px; background: #F1F5F9; margin: 20px 0; }
+    .summary-features { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+    .summary-feat {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13.5px;
+      color: #374151;
+      line-height: 1.4;
+    }
+    .summary-check {
+      width: 17px;
+      height: 17px;
+      border-radius: 50%;
+      background: #EEF2FF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+      color: #6366F1;
+    }
+    .summary-cta {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 14px;
+      background: #6366F1;
+      color: #fff;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.15s, transform 0.1s;
+      margin-bottom: 10px;
+    }
+    .summary-cta:hover { background: #4F46E5; transform: translateY(-1px); }
+    .summary-cta-sub {
+      display: block;
+      width: 100%;
+      text-align: center;
+      font-size: 12px;
+      color: #CBD5E1;
+    }
+
+    /* Enterprise banner */
+    .enterprise-banner {
+      display: none;
+      background: #F8FAFC;
+      border: 1.5px dashed #CBD5E1;
+      border-radius: 14px;
+      padding: 20px 24px;
+      text-align: center;
+      margin-top: 16px;
+    }
+    .enterprise-banner.visible { display: block; }
+    .enterprise-banner p { font-size: 15px; font-weight: 700; color: #0F172A; margin-bottom: 4px; }
+    .enterprise-banner span { font-size: 13px; color: #94A3B8; }
+    .enterprise-btn {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 10px 24px;
+      background: #0F172A;
+      color: #fff;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    /* ── INCLUDED ── */
+    .included-section {
+      background: #F8FAFC;
+      border-top: 1px solid #E2E8F0;
+      border-bottom: 1px solid #E2E8F0;
+      padding: 64px 24px;
+    }
+    .included-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+    .included-inner h2 { font-size: 26px; font-weight: 800; color: #0F172A; margin-bottom: 8px; }
+    .included-inner > p { font-size: 16px; color: #64748B; margin-bottom: 40px; }
+    .included-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      text-align: left;
+    }
+    .included-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: #fff;
+      border: 1px solid #E2E8F0;
+      border-radius: 14px;
+      padding: 18px;
+    }
+    .included-icon {
+      width: 36px; height: 36px;
+      background: #EEF2FF;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      color: #6366F1;
+    }
+    .included-text strong { font-size: 14px; font-weight: 700; color: #0F172A; display: block; margin-bottom: 2px; }
+    .included-text span { font-size: 12.5px; color: #94A3B8; }
+
+    /* ── FAQ ── */
+    .faq-section { padding: 64px 24px 80px; }
+    .faq-inner { max-width: 640px; margin: 0 auto; }
+    .faq-inner h2 { font-size: 26px; font-weight: 800; color: #0F172A; text-align: center; margin-bottom: 36px; }
+    .faq-item { border-bottom: 1px solid #F1F5F9; padding: 20px 0; cursor: pointer; }
+    .faq-item:first-of-type { border-top: 1px solid #F1F5F9; }
+    .faq-question { display: flex; justify-content: space-between; align-items: center; font-size: 15px; font-weight: 700; color: #0F172A; gap: 16px; }
+    .faq-icon { width: 24px; height: 24px; border-radius: 50%; background: #F1F5F9; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #6366F1; font-size: 18px; font-weight: 300; transition: transform 0.2s, background 0.15s; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); background: #EEF2FF; }
+    .faq-answer { font-size: 14px; color: #64748B; line-height: 1.6; max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.2s; }
+    .faq-item.open .faq-answer { max-height: 200px; padding-top: 12px; }
+
+    /* ── BOTTOM CTA ── */
+    .pricing-cta { text-align: center; padding: 0 24px 80px; }
+    .pricing-cta h2 { font-size: 28px; font-weight: 800; color: #0F172A; margin-bottom: 10px; }
+    .pricing-cta p { font-size: 16px; color: #64748B; margin-bottom: 24px; }
+    .pricing-cta-btns { display: flex; gap: 12px; justify-content: center; }
+
+    @media (max-width: 860px) {
+      .config-inner { grid-template-columns: 1fr; }
+      .price-summary { position: static; }
+      .nav-links { display: none; }
+    }
+    @media (max-width: 640px) {
+      .included-grid { grid-template-columns: 1fr 1fr; }
+      .config-panel { padding: 28px 24px; }
+      .ticket-count { font-size: 40px; }
+      .pricing-cta-btns { flex-direction: column; align-items: center; }
+    }
+    @media (max-width: 480px) {
+      .included-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav-wrapper">
+  <nav class="nav-pill">
+    <a href="index.html" class="nav-logo">
+      <img src="supporthero.jpeg" alt="SupportHero" class="nav-logo-img" />
+      <span class="nav-logo-text"><strong>Support</strong>Hero</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="integrations.html">Integrationen</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+      <li><a href="preise.html" style="color:#6366F1;font-weight:700">Preise</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="#" class="btn-primary nav-btn">Kostenlos starten</a>
+    </div>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="pricing-hero">
+  <div class="pricing-eyebrow">
+    <span class="pricing-eyebrow-dot"></span>
+    Preise
+  </div>
+  <h1>Preise, die mit dir wachsen</h1>
+  <p>Keine Grundgebühr pro Nutzer. Zahle nur nach dem, was dein Team wirklich bearbeitet.</p>
+
+  <div class="billing-toggle" id="billingToggle">
+    <button class="toggle-btn active" id="btnMonthly" onclick="setBilling('monthly')">Monatlich</button>
+    <button class="toggle-btn" id="btnAnnual" onclick="setBilling('annual')">
+      Jährlich <span class="save-badge">–20%</span>
+    </button>
+  </div>
+</section>
+
+<!-- CONFIGURATOR -->
+<section class="config-section">
+  <div class="config-inner">
+
+    <!-- Left: Regler -->
+    <div class="config-panel">
+      <div class="config-label">Wie viele Tickets beantwortest du pro Monat?</div>
+
+      <div class="ticket-display">
+        <span class="ticket-count" id="ticketDisplay">500</span>
+        <span class="ticket-unit">Tickets / Monat</span>
+      </div>
+
+      <div class="slider-wrap">
+        <div class="slider-track-bg">
+          <div class="slider-track-fill" id="sliderFill"></div>
+          <input
+            type="range"
+            class="price-slider"
+            id="ticketSlider"
+            min="0"
+            max="7"
+            step="1"
+            value="2"
+            oninput="updatePricing(this.value)"
+          />
+        </div>
+      </div>
+
+      <div class="slider-ticks" id="sliderTicks">
+        <span>100</span>
+        <span>250</span>
+        <span class="active-tick">500</span>
+        <span>1.000</span>
+        <span>2.500</span>
+        <span>5.000</span>
+        <span>10.000</span>
+        <span>10.000+</span>
+      </div>
+
+      <div class="config-note">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        Ein Ticket = eine eingehende Kundenanfrage, egal ob per E-Mail, WhatsApp oder Instagram. Ausgehende Nachrichten zählen nicht.
+      </div>
+    </div>
+
+    <!-- Right: Preiszusammenfassung -->
+    <div class="price-summary" id="priceSummary">
+      <div class="summary-label">Dein Plan</div>
+
+      <div class="summary-price">
+        <span class="summary-currency">€</span>
+        <span class="summary-amount" id="summaryAmount">79</span>
+        <span class="summary-period">/mo</span>
+      </div>
+      <div class="summary-billed-note" id="billedNote">Monatlich abgerechnet</div>
+
+      <div class="summary-divider"></div>
+
+      <div class="summary-features">
+        <div class="summary-feat">
+          <span class="summary-check"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span id="feat-tickets">Bis zu 500 Tickets / Monat</span>
+        </div>
+        <div class="summary-feat">
+          <span class="summary-check"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+          Unbegrenzte Team-Mitglieder
+        </div>
+        <div class="summary-feat">
+          <span class="summary-check"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+          Alle Integrationen inklusive
+        </div>
+        <div class="summary-feat">
+          <span class="summary-check"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+          KI-Antworten & Autopilot
+        </div>
+        <div class="summary-feat" id="feat-extra">
+          <span class="summary-check"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span id="feat-extra-text">E-Mail Support</span>
+        </div>
+      </div>
+
+      <a href="#" class="summary-cta" id="summaryCta">Kostenlos testen</a>
+      <span class="summary-cta-sub">14 Tage gratis · Keine Kreditkarte nötig</span>
+
+      <div class="enterprise-banner" id="enterpriseBanner">
+        <p>Mehr als 10.000 Tickets?</p>
+        <span>Individuelles Angebot für dein Team — auf Anfrage.</span>
+        <a href="kontakt.html" class="enterprise-btn">Demo buchen →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="pricing-cta">
+  <h2>Bereit loszulegen?</h2>
+  <p>14 Tage kostenlos — ohne Kreditkarte, ohne Risiko.</p>
+  <div class="pricing-cta-btns">
+    <a href="#" class="btn-primary btn-lg">Kostenlos starten</a>
+    <a href="kontakt.html" class="btn-outline btn-lg">Demo buchen →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo">
+          <img src="supporthero.jpeg" alt="SupportHero" class="footer-logo-img" />
+          <span class="footer-logo-text"><strong>Support</strong>Hero</span>
+        </a>
+        <p class="footer-tagline">KI-gestützter Kundenservice für E-Commerce.<br>Automatisiere Anfragen &amp; Retouren.<br>Ohne Programmierung.</p>
+        <div class="footer-social">
+          <a href="#" class="footer-social-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+          <a href="#" class="footer-social-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="#" class="footer-social-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+          <a href="#" class="footer-social-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Ressourcen</div>
+        <a href="#">Dokumentation</a>
+        <a href="#">Video-Tutorials</a>
+        <a href="#">Community</a>
+        <a href="#" class="footer-link-bold">Shopify App</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Unternehmen</div>
+        <a href="#">AGB</a>
+        <a href="#">Datenschutz</a>
+        <a href="#">Impressum</a>
+        <a href="#">FAQs</a>
+      </div>
+      <div class="footer-col footer-newsletter-col">
+        <div class="footer-col-title">Newsletter</div>
+        <div class="footer-newsletter-img">
+          <div class="footer-guide-card">
+            <div class="footer-guide-cover">
+              <div style="font-size:10px;font-weight:700;color:#fff;text-align:center;line-height:1.3">
+                <div style="font-size:16px;margin-bottom:4px">📬</div>
+                <div>E-Commerce</div><div>Support</div><div>Handbuch</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="footer-newsletter-label">Abonniere Support-Tipps &amp; E-Commerce Best Practices</p>
+        <div class="footer-newsletter-form">
+          <input type="email" placeholder="Deine E-Mail-Adresse" />
+          <button class="footer-submit-btn">Absenden</button>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">2024 – 2026 © SupportHero GmbH</span>
+      <a href="index.html" class="footer-bottom-logo">
+        <img src="supporthero.jpeg" alt="SupportHero" class="footer-logo-img" style="width:24px;height:24px" />
+        <span class="footer-logo-text" style="font-size:15px"><strong>Support</strong>Hero</span>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Pricing tiers: [ticketLabel, monthlyPrice, extraFeature]
+  const TIERS = [
+    { label: '100',     monthly: 29,  extra: 'E-Mail Support',         fmt: 'Bis zu 100' },
+    { label: '250',     monthly: 49,  extra: 'E-Mail Support',         fmt: 'Bis zu 250' },
+    { label: '500',     monthly: 79,  extra: 'E-Mail Support',         fmt: 'Bis zu 500' },
+    { label: '1.000',   monthly: 119, extra: 'Prioritäts-Support',     fmt: 'Bis zu 1.000' },
+    { label: '2.500',   monthly: 179, extra: 'Prioritäts-Support',     fmt: 'Bis zu 2.500' },
+    { label: '5.000',   monthly: 249, extra: 'Dedizierter Account Mgr', fmt: 'Bis zu 5.000' },
+    { label: '10.000',  monthly: 349, extra: 'Dedizierter Account Mgr', fmt: 'Bis zu 10.000' },
+    { label: '10.000+', monthly: null, extra: null,                     fmt: 'Unbegrenzt' },
+  ];
+
+  let isAnnual = false;
+
+  function updatePricing(val) {
+    const idx = parseInt(val);
+    const tier = TIERS[idx];
+    const isEnterprise = tier.monthly === null;
+
+    // Ticket display
+    document.getElementById('ticketDisplay').textContent = tier.label;
+
+    // Slider fill
+    const pct = (idx / 7) * 100;
+    document.getElementById('sliderFill').style.width = pct + '%';
+
+    // Tick active states
+    document.querySelectorAll('#sliderTicks span').forEach((el, i) => {
+      el.classList.toggle('active-tick', i === idx);
+    });
+
+    // Price
+    const price = isEnterprise ? null : (isAnnual ? Math.round(tier.monthly * 0.8) : tier.monthly);
+    const amountEl = document.getElementById('summaryAmount');
+    const ctaEl = document.getElementById('summaryCta');
+    const banner = document.getElementById('enterpriseBanner');
+    const billedNote = document.getElementById('billedNote');
+
+    if (isEnterprise) {
+      amountEl.style.fontSize = '32px';
+      amountEl.textContent = 'Individuell';
+      document.querySelector('.summary-currency').style.display = 'none';
+      document.querySelector('.summary-period').style.display = 'none';
+      billedNote.textContent = 'Auf Anfrage';
+      ctaEl.style.display = 'none';
+      banner.classList.add('visible');
+    } else {
+      amountEl.style.fontSize = '52px';
+      amountEl.textContent = price;
+      document.querySelector('.summary-currency').style.display = '';
+      document.querySelector('.summary-period').style.display = '';
+      billedNote.textContent = isAnnual ? 'Jährlich abgerechnet (20% gespart)' : 'Monatlich abgerechnet';
+      ctaEl.style.display = '';
+      banner.classList.remove('visible');
+    }
+
+    // Feature text
+    document.getElementById('feat-tickets').textContent = tier.fmt + ' Tickets / Monat';
+    if (tier.extra) {
+      document.getElementById('feat-extra').style.display = 'flex';
+      document.getElementById('feat-extra-text').textContent = tier.extra;
+    }
+  }
+
+  function setBilling(type) {
+    isAnnual = type === 'annual';
+    document.getElementById('btnAnnual').classList.toggle('active', isAnnual);
+    document.getElementById('btnMonthly').classList.toggle('active', !isAnnual);
+    const billedNote = document.getElementById('billedNote');
+    billedNote.textContent = isAnnual ? 'Jährlich abgerechnet (20% gespart)' : 'Monatlich abgerechnet';
+    updatePricing(document.getElementById('ticketSlider').value);
+  }
+
+  function toggleFaq(el) {
+    const isOpen = el.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) el.classList.add('open');
+  }
+
+  // Init
+  updatePricing(2);
+</script>
+
+</body>
+</html>
