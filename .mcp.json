@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "playwright": {
+      "type": "sse",
+      "url": "http://localhost:8931/sse",
+      "headers": {
+        "x-claude-mcp-extension-token": "JbUf9WwlhTikB2ZD4BgeFLsNDTz4TIRGU3SHdxWlzc4"
+      }
+    }
+  }
+}
