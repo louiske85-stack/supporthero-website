@@ -3,443 +3,800 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Support Hero — KI-gestützter Kundensupport</title>
-  <meta name="description" content="Support Hero vereint KI-Agent, Posteingang, Retouren und Analytics in einer Plattform. Automatisiere deinen Support und begeistere deine Kunden." />
+  <title>Support Hero — #1 KI-Support-Plattform für E-Commerce</title>
+  <meta name="description" content="Support Hero hilft dir, mehr Kundenanfragen automatisch zu lösen, Retouren zu automatisieren und dein Team zu entlasten. Keine Programmierung erforderlich." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <!-- NAV -->
-  <header class="nav-wrap">
-    <nav class="nav">
+  <!-- ═══ NAV ═══ -->
+  <header class="nav-wrap" id="nav">
+    <nav class="nav container">
       <a href="#" class="logo">
-        <span class="logo-icon">⚡</span>
-        <span class="logo-text">Support<strong>Hero</strong></span>
+        <div class="logo-mark">⚡</div>
+        <span>Support<strong>Hero</strong></span>
       </a>
       <ul class="nav-links">
         <li><a href="#features">Features</a></li>
+        <li><a href="#loesungen">Lösungen</a></li>
+        <li><a href="#vorlagen">Vorlagen</a></li>
         <li><a href="#integrationen">Integrationen</a></li>
         <li><a href="#preise">Preise</a></li>
-        <li><a href="#kontakt">Kontakt</a></li>
       </ul>
       <div class="nav-actions">
         <a href="#" class="btn-ghost">Anmelden</a>
         <a href="#" class="btn-primary">Kostenlos starten</a>
       </div>
-      <button class="hamburger" onclick="toggleMenu()" aria-label="Menü">
+      <button class="hamburger" onclick="toggleMenu()" aria-label="Menü öffnen">
         <span></span><span></span><span></span>
       </button>
     </nav>
     <div class="mobile-menu" id="mobileMenu">
       <a href="#features">Features</a>
+      <a href="#loesungen">Lösungen</a>
+      <a href="#vorlagen">Vorlagen</a>
       <a href="#integrationen">Integrationen</a>
       <a href="#preise">Preise</a>
-      <a href="#kontakt">Kontakt</a>
-      <a href="#" class="btn-primary" style="text-align:center;margin-top:8px">Kostenlos starten</a>
+      <a href="#" class="btn-primary mt-8">Kostenlos starten</a>
     </div>
   </header>
 
-  <!-- HERO -->
+  <!-- ═══ HERO ═══ -->
   <section class="hero">
-    <div class="hero-badge">Neu: KI-Agent 2.0 mit automatischen Retouren</div>
-    <h1 class="hero-headline">
-      Support, der<br/>
-      <span class="accent">von selbst läuft</span>
-    </h1>
-    <p class="hero-sub">
-      Support Hero vereint KI-Agent, Posteingang, Retourenmanagement und Analytics in einer Plattform. Weniger Aufwand, zufriedenere Kunden.
-    </p>
-    <div class="hero-ctas">
-      <a href="#" class="btn-primary btn-lg">Kostenlos starten</a>
-      <a href="#" class="btn-outline btn-lg">Demo ansehen →</a>
-    </div>
-    <p class="hero-hint">Keine Kreditkarte erforderlich · 14 Tage gratis</p>
-    <div class="hero-visual">
-      <div class="browser-mock">
-        <div class="browser-bar">
-          <span class="dot red"></span>
-          <span class="dot yellow"></span>
-          <span class="dot green"></span>
-          <span class="browser-url">app.supporthero.co/inbox</span>
-        </div>
-        <div class="browser-content">
-          <div class="mock-sidebar">
-            <div class="mock-nav-item active">Posteingang</div>
-            <div class="mock-nav-item">KI-Agent</div>
-            <div class="mock-nav-item">Retouren</div>
-            <div class="mock-nav-item">Analytics</div>
-          </div>
-          <div class="mock-inbox">
-            <div class="mock-ticket">
-              <div class="mock-avatar" style="background:#6366F1">MK</div>
-              <div class="mock-ticket-body">
-                <div class="mock-ticket-name">Maria K. <span class="mock-badge">WhatsApp</span></div>
-                <div class="mock-ticket-text">Wo ist meine Bestellung #1234?</div>
-              </div>
-              <div class="mock-ai-badge">KI antwortet ✓</div>
-            </div>
-            <div class="mock-ticket">
-              <div class="mock-avatar" style="background:#10B981">TS</div>
-              <div class="mock-ticket-body">
-                <div class="mock-ticket-name">Thomas S. <span class="mock-badge email">E-Mail</span></div>
-                <div class="mock-ticket-text">Retourenantrag für Bestellung...</div>
-              </div>
-              <div class="mock-ai-badge">Retoure erstellt ✓</div>
-            </div>
-            <div class="mock-ticket">
-              <div class="mock-avatar" style="background:#F59E0B">LB</div>
-              <div class="mock-ticket-body">
-                <div class="mock-ticket-name">Lisa B. <span class="mock-badge">WhatsApp</span></div>
-                <div class="mock-ticket-text">Kann ich die Größe tauschen?</div>
-              </div>
-              <div class="mock-ai-badge">KI antwortet ✓</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- LOGOS / SOCIAL PROOF -->
-  <section class="logos-strip">
-    <p class="logos-label">Vertraut von über 500+ Shops</p>
-    <div class="logos-row">
-      <div class="logo-pill">Shopify</div>
-      <div class="logo-pill">WooCommerce</div>
-      <div class="logo-pill">Magento</div>
-      <div class="logo-pill">Shopware</div>
-      <div class="logo-pill">BigCommerce</div>
-      <div class="logo-pill">Wix</div>
-    </div>
-  </section>
-
-  <!-- STATS -->
-  <section class="stats">
-    <div class="stats-inner">
-      <div class="stat">
-        <div class="stat-number">87<span class="stat-unit">%</span></div>
-        <div class="stat-label">aller Anfragen automatisch gelöst</div>
-      </div>
-      <div class="stat-divider"></div>
-      <div class="stat">
-        <div class="stat-number">3.2<span class="stat-unit">×</span></div>
-        <div class="stat-label">schnellere Antwortzeit</div>
-      </div>
-      <div class="stat-divider"></div>
-      <div class="stat">
-        <div class="stat-number">60<span class="stat-unit">%</span></div>
-        <div class="stat-label">weniger Support-Aufwand</div>
-      </div>
-      <div class="stat-divider"></div>
-      <div class="stat">
-        <div class="stat-number">4.9<span class="stat-unit">★</span></div>
-        <div class="stat-label">Kundenzufriedenheit (Ø)</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FEATURES -->
-  <section class="features" id="features">
-    <div class="section-header">
-      <div class="eyebrow">Features</div>
-      <h2>Alles, was dein Support braucht</h2>
-      <p>Von der ersten Anfrage bis zur abgeschlossenen Retoure — Support Hero übernimmt den Rest.</p>
-    </div>
-
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-icon" style="background:#EEF2FF;color:#6366F1">🤖</div>
-        <h3>KI-Support-Agent</h3>
-        <p>Dein KI-Agent beantwortet Kundenanfragen rund um die Uhr — automatisch, präzise und in deiner Markensprache.</p>
-        <ul class="feature-list">
-          <li>Trainiert auf deinen FAQs & Produkten</li>
-          <li>Mehrsprachig (DE, EN, FR, +12)</li>
-          <li>Eskaliert bei Bedarf an einen Agenten</li>
-        </ul>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon" style="background:#F0FDF4;color:#10B981">📬</div>
-        <h3>Unified Inbox</h3>
-        <p>E-Mail, WhatsApp, Instagram und mehr — alle Kanäle in einem übersichtlichen Posteingang.</p>
-        <ul class="feature-list">
-          <li>Kanal-übergreifende Gesprächshistorie</li>
-          <li>Intelligentes Ticket-Routing</li>
-          <li>SLA-Warnungen & Prioritäten</li>
-        </ul>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon" style="background:#FFF7ED;color:#F59E0B">↩️</div>
-        <h3>Retourenmanagement</h3>
-        <p>Automatisiere deinen Retourenprozess vollständig — vom Antrag bis zur Rückerstattung.</p>
-        <ul class="feature-list">
-          <li>Branded Kunden-Portal</li>
-          <li>Automatische Genehmigungsregeln</li>
-          <li>Shopify & WooCommerce Integration</li>
-        </ul>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon" style="background:#F0F9FF;color:#0369A1">📊</div>
-        <h3>Analytics & Insights</h3>
-        <p>Verstehe, wo dein Support steht — und wo er besser werden kann.</p>
-        <ul class="feature-list">
-          <li>Echtzeit-KPIs & Dashboards</li>
-          <li>KI-Optimierungsvorschläge</li>
-          <li>Team-Performance-Reports</li>
-        </ul>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon" style="background:#FFF1F2;color:#E11D48">🛡️</div>
-        <h3>Wissensdatenbank</h3>
-        <p>Gib deinem KI-Agenten die richtigen Antworten — durch eine zentrale, immer aktuelle Wissensbasis.</p>
-        <ul class="feature-list">
-          <li>Websites, PDFs, CSV importieren</li>
-          <li>Q&A-Paare manuell pflegen</li>
-          <li>Automatisch durch Crawling aktuell</li>
-        </ul>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon" style="background:#F5F3FF;color:#7C3AED">👥</div>
-        <h3>Team & Rollen</h3>
-        <p>Verwalte dein Support-Team mit flexiblen Rollen und Berechtigungen.</p>
-        <ul class="feature-list">
-          <li>Rollen: Owner, Admin, Agent, Viewer</li>
-          <li>Workspace-Management</li>
-          <li>Aktivitäts-Logs</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- FEATURE HIGHLIGHT 1 -->
-  <section class="highlight">
-    <div class="highlight-inner">
-      <div class="highlight-text">
-        <div class="eyebrow">KI-Agent</div>
-        <h2>Dein bester Mitarbeiter schläft nie</h2>
-        <p>Support Hero's KI-Agent ist rund um die Uhr für deine Kunden da. Er lernt aus deinen Inhalten, hält Antworten konsistent und eskaliert nur, wenn ein Mensch wirklich gebraucht wird.</p>
-        <ul class="check-list">
-          <li>Antwortet in Sekunden, nicht Stunden</li>
-          <li>Kennt dein Produktsortiment & Richtlinien</li>
-          <li>Nahtlose Übergabe an dein Team</li>
-          <li>Wird mit jeder Konversation besser</li>
-        </ul>
-        <a href="#" class="btn-primary" style="margin-top:24px;display:inline-block">KI-Agent ausprobieren →</a>
-      </div>
-      <div class="highlight-visual">
-        <div class="chat-mock">
-          <div class="chat-header">
-            <div class="chat-avatar">🤖</div>
-            <div>
-              <div class="chat-name">Support Hero KI</div>
-              <div class="chat-status">● Online</div>
-            </div>
-          </div>
-          <div class="chat-messages">
-            <div class="chat-bubble user">Wo ist meine Bestellung #4821?</div>
-            <div class="chat-bubble bot">Hallo! Deine Bestellung #4821 ist bereits <strong>unterwegs</strong> 🎉<br/><br/>Voraussichtliche Lieferung: <strong>Morgen, 12–16 Uhr</strong><br/>Tracking: DHL DE123456789</div>
-            <div class="chat-bubble user">Kann ich sie noch umleiten?</div>
-            <div class="chat-bubble bot">Ja, das ist noch möglich! Ich leite dich direkt an den Paketdienst weiter oder du nutzt die DHL-App mit deiner Tracking-Nummer.</div>
-          </div>
-          <div class="chat-typing">
-            <span></span><span></span><span></span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- INTEGRATIONS -->
-  <section class="integrations" id="integrationen">
-    <div class="section-header">
-      <div class="eyebrow">Integrationen</div>
-      <h2>Verbinde deine Tools</h2>
-      <p>Support Hero verbindet sich mit den Tools, die du bereits nutzt — ohne technisches Setup.</p>
-    </div>
-    <div class="integrations-grid">
-      <div class="integration-card"><div class="int-icon">💬</div><div class="int-name">WhatsApp</div></div>
-      <div class="integration-card"><div class="int-icon">📧</div><div class="int-name">Gmail</div></div>
-      <div class="integration-card"><div class="int-icon">🛍️</div><div class="int-name">Shopify</div></div>
-      <div class="integration-card"><div class="int-icon">🛒</div><div class="int-name">WooCommerce</div></div>
-      <div class="integration-card"><div class="int-icon">📦</div><div class="int-name">DHL</div></div>
-      <div class="integration-card"><div class="int-icon">💳</div><div class="int-name">Stripe</div></div>
-      <div class="integration-card"><div class="int-icon">📸</div><div class="int-name">Instagram</div></div>
-      <div class="integration-card"><div class="int-icon">📘</div><div class="int-name">Facebook</div></div>
-      <div class="integration-card"><div class="int-icon">🏪</div><div class="int-name">Amazon</div></div>
-      <div class="integration-card"><div class="int-icon">💰</div><div class="int-name">PayPal</div></div>
-      <div class="integration-card"><div class="int-icon">🎁</div><div class="int-name">Klarna</div></div>
-      <div class="integration-card"><div class="int-icon">⚙️</div><div class="int-name">Zapier</div></div>
-    </div>
-  </section>
-
-  <!-- TESTIMONIALS -->
-  <section class="testimonials">
-    <div class="section-header">
-      <div class="eyebrow">Kundenstimmen</div>
-      <h2>Was unsere Kunden sagen</h2>
-    </div>
-    <div class="testimonials-grid">
-      <div class="testimonial-card">
-        <div class="stars">★★★★★</div>
-        <p>"Seit wir Support Hero nutzen, beantworten wir 90% der Anfragen automatisch. Unser Team kann sich endlich auf wirklich komplexe Fälle konzentrieren."</p>
-        <div class="testimonial-author">
-          <div class="t-avatar" style="background:#6366F1">AK</div>
-          <div>
-            <div class="t-name">Anna K.</div>
-            <div class="t-role">Head of Customer Support, FashionStore GmbH</div>
-          </div>
-        </div>
-      </div>
-      <div class="testimonial-card">
-        <div class="stars">★★★★★</div>
-        <p>"Das Retourenmanagement hat uns enorm viel Zeit gespart. Kunden können ihre Retoure selbst abwickeln — ohne einen einzigen Support-Kontakt."</p>
-        <div class="testimonial-author">
-          <div class="t-avatar" style="background:#10B981">MR</div>
-          <div>
-            <div class="t-name">Max R.</div>
-            <div class="t-role">E-Commerce Manager, SportWorld AG</div>
-          </div>
-        </div>
-      </div>
-      <div class="testimonial-card">
-        <div class="stars">★★★★★</div>
-        <p>"Alle Kanäle in einem Posteingang — das klingt simpel, aber es hat unsere Workflows komplett transformiert. Setup war in unter einer Stunde erledigt."</p>
-        <div class="testimonial-author">
-          <div class="t-avatar" style="background:#F59E0B">LB</div>
-          <div>
-            <div class="t-name">Laura B.</div>
-            <div class="t-role">Gründerin, Handmade Berlin</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRICING -->
-  <section class="pricing" id="preise">
-    <div class="section-header">
-      <div class="eyebrow">Preise</div>
-      <h2>Einfache, transparente Preise</h2>
-      <p>Starte kostenlos und wächst mit deinem Business.</p>
-    </div>
-    <div class="pricing-grid">
-      <div class="pricing-card">
-        <div class="plan-name">Starter</div>
-        <div class="plan-price">Kostenlos</div>
-        <div class="plan-period">für immer</div>
-        <ul class="plan-features">
-          <li>✓ 1 KI-Agent</li>
-          <li>✓ 500 Anfragen / Monat</li>
-          <li>✓ 2 Kanäle</li>
-          <li>✓ E-Mail-Support</li>
-        </ul>
-        <a href="#" class="btn-outline" style="width:100%;text-align:center;display:block">Jetzt starten</a>
-      </div>
-      <div class="pricing-card featured">
-        <div class="plan-badge">Beliebt</div>
-        <div class="plan-name">Pro</div>
-        <div class="plan-price">€49<span>/Mo</span></div>
-        <div class="plan-period">monatlich kündbar</div>
-        <ul class="plan-features">
-          <li>✓ Unbegrenzte Anfragen</li>
-          <li>✓ Alle Kanäle</li>
-          <li>✓ Retourenmanagement</li>
-          <li>✓ Analytics & Reports</li>
-          <li>✓ 5 Team-Mitglieder</li>
-          <li>✓ Priority-Support</li>
-        </ul>
-        <a href="#" class="btn-primary" style="width:100%;text-align:center;display:block">14 Tage gratis testen</a>
-      </div>
-      <div class="pricing-card">
-        <div class="plan-name">Enterprise</div>
-        <div class="plan-price">Individuell</div>
-        <div class="plan-period">nach Absprache</div>
-        <ul class="plan-features">
-          <li>✓ Alles aus Pro</li>
-          <li>✓ Unbegrenzte Mitglieder</li>
-          <li>✓ Custom Integrationen</li>
-          <li>✓ Dedizierter Account Manager</li>
-          <li>✓ SLA-Garantie</li>
-          <li>✓ On-Premise Option</li>
-        </ul>
-        <a href="#" class="btn-outline" style="width:100%;text-align:center;display:block">Kontakt aufnehmen</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA BANNER -->
-  <section class="cta-banner">
-    <div class="cta-inner">
-      <h2>Bereit, deinen Support zu automatisieren?</h2>
-      <p>Starte noch heute kostenlos — keine Kreditkarte, keine versteckten Kosten.</p>
-      <div class="cta-btns">
-        <a href="#" class="btn-white">Kostenlos starten</a>
-        <a href="#" class="btn-ghost-white">Demo ansehen →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer" id="kontakt">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <a href="#" class="logo" style="color:#fff">
-          <span class="logo-icon">⚡</span>
-          <span class="logo-text">Support<strong>Hero</strong></span>
+    <div class="hero-inner container">
+      <div class="hero-text">
+        <a href="#" class="hero-badge">
+          <span class="badge-dot"></span>
+          Neu: KI-Agent 2.0 mit automatischen Retouren →
         </a>
-        <p>KI-gestützter Kundensupport für moderne E-Commerce-Shops.</p>
-        <div class="footer-socials">
-          <a href="#">Twitter</a>
-          <a href="#">LinkedIn</a>
-          <a href="#">Instagram</a>
+        <h1>#1 KI-Support-Plattform für Shopify & WooCommerce</h1>
+        <p class="hero-sub">Support Hero hilft dir, mehr Kundenanfragen automatisch zu lösen, Retouren zu automatisieren und dein Team zu entlasten — ohne Programmierung, ohne Aufwand.</p>
+        <div class="hero-ctas">
+          <a href="#" class="btn-primary btn-lg">Kostenlos starten</a>
+          <a href="#" class="btn-outline-dark btn-lg">Demo ansehen →</a>
+        </div>
+        <p class="hero-meta">Keine Kreditkarte · 14 Tage gratis · Jederzeit kündbar</p>
+      </div>
+      <div class="hero-visual">
+        <div class="product-shot">
+          <div class="ps-header">
+            <div class="ps-dots"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span></div>
+            <div class="ps-url">app.supporthero.co/inbox</div>
+          </div>
+          <div class="ps-body">
+            <div class="ps-sidebar">
+              <div class="ps-logo-mini">⚡ SH</div>
+              <div class="ps-nav-items">
+                <div class="ps-nav active" title="Posteingang">📬</div>
+                <div class="ps-nav" title="KI-Agent">🤖</div>
+                <div class="ps-nav" title="Retouren">↩️</div>
+                <div class="ps-nav" title="Analytics">📊</div>
+              </div>
+            </div>
+            <div class="ps-main">
+              <div class="ps-toolbar">
+                <span class="ps-title">Posteingang</span>
+                <div class="ps-chips">
+                  <span class="chip active">Offen (12)</span>
+                  <span class="chip">In Bearbeitung (3)</span>
+                  <span class="chip">Gelöst (47)</span>
+                </div>
+              </div>
+              <div class="ps-tickets">
+                <div class="ps-ticket">
+                  <div class="ps-av" style="background:#6366F1">MK</div>
+                  <div class="ps-info">
+                    <div class="ps-name">Maria K. <span class="ps-ch wa">WhatsApp</span></div>
+                    <div class="ps-msg">Wo ist meine Bestellung #4821?</div>
+                  </div>
+                  <div class="ps-ai-tag">KI ✓</div>
+                </div>
+                <div class="ps-ticket">
+                  <div class="ps-av" style="background:#10B981">TS</div>
+                  <div class="ps-info">
+                    <div class="ps-name">Thomas S. <span class="ps-ch em">E-Mail</span></div>
+                    <div class="ps-msg">Retourenantrag für Bestellung #3902</div>
+                  </div>
+                  <div class="ps-ai-tag">Retoure ✓</div>
+                </div>
+                <div class="ps-ticket">
+                  <div class="ps-av" style="background:#F59E0B">LB</div>
+                  <div class="ps-info">
+                    <div class="ps-name">Lisa B. <span class="ps-ch wa">WhatsApp</span></div>
+                    <div class="ps-msg">Kann ich die Größe tauschen?</div>
+                  </div>
+                  <div class="ps-ai-tag">KI ✓</div>
+                </div>
+                <div class="ps-ticket">
+                  <div class="ps-av" style="background:#E11D48">JM</div>
+                  <div class="ps-info">
+                    <div class="ps-name">Jan M. <span class="ps-ch ig">Instagram</span></div>
+                    <div class="ps-msg">Artikel nie angekommen, bitte helfen!</div>
+                  </div>
+                  <div class="ps-ai-tag" style="background:#FEF2F2;color:#DC2626">Eskaliert</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="footer-col">
-        <div class="footer-col-title">Produkt</div>
-        <a href="#">Features</a>
-        <a href="#">Integrationen</a>
-        <a href="#">Preise</a>
-        <a href="#">Changelog</a>
-      </div>
-      <div class="footer-col">
-        <div class="footer-col-title">Unternehmen</div>
-        <a href="#">Über uns</a>
-        <a href="#">Blog</a>
-        <a href="#">Karriere</a>
-        <a href="#">Presse</a>
-      </div>
-      <div class="footer-col">
-        <div class="footer-col-title">Support</div>
-        <a href="#">Hilfe-Center</a>
-        <a href="#">Kontakt</a>
-        <a href="#">Status</a>
-        <a href="#">API-Docs</a>
+    </div>
+    <div class="hero-wave">
+      <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 80L1440 80L1440 20C1200 70 960 0 720 40C480 80 240 10 0 40L0 80Z" fill="white"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ═══ LOGOS ═══ -->
+  <section class="logos-strip">
+    <div class="container">
+      <p class="logos-label">Vertraut von über 500+ E-Commerce-Shops</p>
+      <div class="logos-row">
+        <div class="logo-item">Shopify</div>
+        <div class="logo-item">WooCommerce</div>
+        <div class="logo-item">Shopware</div>
+        <div class="logo-item">Magento</div>
+        <div class="logo-item">BigCommerce</div>
+        <div class="logo-item">Amazon</div>
+        <div class="logo-item">Wix</div>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>© 2026 Support Hero. Alle Rechte vorbehalten.</span>
+  </section>
+
+  <!-- ═══ BUILD & AUTOMATE (3 Columns) ═══ -->
+  <section class="three-col-section" id="features">
+    <div class="container">
+      <div class="section-eyebrow">Features</div>
+      <h2 class="section-h2">Alles was dein Support braucht</h2>
+      <p class="section-sub">Von der ersten Kundenanfrage bis zur abgeschlossenen Retoure — Support Hero übernimmt den Rest.</p>
+      <div class="three-cols">
+        <div class="three-col-card">
+          <div class="tcol-icon" style="background:#EEF2FF">🤖</div>
+          <h3>Ansprechendes KI-Design</h3>
+          <p>Dein KI-Agent antwortet im Stil deiner Marke — präzise, konsistent und rund um die Uhr verfügbar.</p>
+        </div>
+        <div class="three-col-card">
+          <div class="tcol-icon" style="background:#F0FDF4">⚡</div>
+          <h3>Konversions-optimierter Support</h3>
+          <p>Schnelle Antworten steigern Vertrauen und senken Abbruchquoten — direkt messbar in deinem Dashboard.</p>
+        </div>
+        <div class="three-col-card">
+          <div class="tcol-icon" style="background:#FFF7ED">🎨</div>
+          <h3>Vollständige Anpassbarkeit</h3>
+          <p>Passe Ton, Sprache, Eskalationsregeln und Workflows genau an dein Business an — ohne Code.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ SUPPORT FUNNEL (text + visual) ═══ -->
+  <section class="highlight-section bg-soft" id="loesungen">
+    <div class="container">
+      <div class="hl-inner reverse">
+        <div class="hl-text">
+          <div class="section-eyebrow">Automatisierung</div>
+          <h2>Richte einen Support-Funnel ein, der Anfragen löst & Kunden begeistert</h2>
+          <p>Support Hero gibt dir die Werkzeuge, um jeden Touchpoint deines Kundenservice zu automatisieren und zu optimieren — von der ersten Anfrage bis zur Rückerstattung.</p>
+          <div class="metric-pills">
+            <div class="metric-pill"><strong>Bis zu 87%</strong> Auto-Lösungsrate</div>
+            <div class="metric-pill"><strong>3.2×</strong> schnellere Antwortzeit</div>
+          </div>
+          <ul class="feature-check-list">
+            <li>KI-gestützte Erstantwort in Sekunden</li>
+            <li>Automatische Retourenabwicklung</li>
+            <li>Post-Kauf Support & Upsell-Flows</li>
+            <li>Dynamische Eskalationsregeln</li>
+            <li>A/B-Testing für Antwortvorlagen</li>
+            <li>Conversion Analytics</li>
+          </ul>
+        </div>
+        <div class="hl-visual">
+          <div class="funnel-visual">
+            <div class="funnel-step">
+              <div class="fstep-num">1</div>
+              <div class="fstep-body">
+                <div class="fstep-title">Kundenanfrage eingeht</div>
+                <div class="fstep-sub">WhatsApp · E-Mail · Instagram · Facebook</div>
+              </div>
+              <div class="fstep-icon">📩</div>
+            </div>
+            <div class="funnel-arrow">↓</div>
+            <div class="funnel-step accent">
+              <div class="fstep-num accent">2</div>
+              <div class="fstep-body">
+                <div class="fstep-title">KI analysiert & antwortet</div>
+                <div class="fstep-sub">87% aller Fälle automatisch gelöst</div>
+              </div>
+              <div class="fstep-icon">🤖</div>
+            </div>
+            <div class="funnel-arrow">↓</div>
+            <div class="funnel-step">
+              <div class="fstep-num">3</div>
+              <div class="fstep-body">
+                <div class="fstep-title">Eskalation bei Bedarf</div>
+                <div class="fstep-sub">Nur komplexe Fälle ans Team</div>
+              </div>
+              <div class="fstep-icon">👤</div>
+            </div>
+            <div class="funnel-arrow">↓</div>
+            <div class="funnel-step success">
+              <div class="fstep-num success">4</div>
+              <div class="fstep-body">
+                <div class="fstep-title">Kunde zufrieden ✓</div>
+                <div class="fstep-sub">CSAT 4.9 ★ im Schnitt</div>
+              </div>
+              <div class="fstep-icon">🎉</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ KI FEATURES (3 Cards) ═══ -->
+  <section class="ai-section">
+    <div class="container">
+      <div class="section-eyebrow">KI-Features</div>
+      <h2 class="section-h2">KI-Power für deinen Kundenservice</h2>
+      <p class="section-sub">Support Hero nutzt modernste KI, um deinen Support auf das nächste Level zu heben.</p>
+      <div class="ai-cards">
+        <div class="ai-card">
+          <div class="ai-card-top">
+            <div class="ai-icon">🧠</div>
+            <div class="ai-label">KI Wissensbasis</div>
+          </div>
+          <h3>Websites, PDFs & FAQs als KI-Wissen</h3>
+          <p>Lade deine Inhalte hoch — Support Hero lernt daraus und gibt deinen Kunden präzise Antworten.</p>
+          <div class="ai-tag">Verfügbar jetzt</div>
+        </div>
+        <div class="ai-card featured">
+          <div class="ai-card-top">
+            <div class="ai-icon">✍️</div>
+            <div class="ai-label">KI Antwort-Generator</div>
+          </div>
+          <h3>Automatische Antworten in deiner Markensprache</h3>
+          <p>Der KI-Agent antwortet in deinem Ton, deiner Sprache und auf Basis deiner Richtlinien — ohne manuellen Aufwand.</p>
+          <div class="ai-tag">Verfügbar jetzt</div>
+        </div>
+        <div class="ai-card">
+          <div class="ai-card-top">
+            <div class="ai-icon">🔮</div>
+            <div class="ai-label">KI Optimierungs-Coach</div>
+          </div>
+          <h3>Verbessere deinen Support automatisch</h3>
+          <p>Support Hero analysiert Schwachstellen und schlägt konkrete Optimierungen für deinen KI-Agenten vor.</p>
+          <div class="ai-tag coming">Demnächst</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ DASHBOARD (visual + text) ═══ -->
+  <section class="highlight-section">
+    <div class="container">
+      <div class="hl-inner">
+        <div class="hl-visual">
+          <div class="dashboard-mock">
+            <div class="dm-header">
+              <span class="dm-title">Analytics Dashboard</span>
+              <span class="dm-period">Letzte 30 Tage</span>
+            </div>
+            <div class="dm-stats">
+              <div class="dm-stat">
+                <div class="dm-num">1.820</div>
+                <div class="dm-label">Anfragen gesamt</div>
+                <div class="dm-trend up">↑ 12%</div>
+              </div>
+              <div class="dm-stat">
+                <div class="dm-num">87%</div>
+                <div class="dm-label">KI-Lösungsrate</div>
+                <div class="dm-trend up">↑ 4%</div>
+              </div>
+              <div class="dm-stat">
+                <div class="dm-num">1,4 Min</div>
+                <div class="dm-label">Ø Erstantwort</div>
+                <div class="dm-trend up">↓ 61%</div>
+              </div>
+            </div>
+            <div class="dm-chart">
+              <div class="dm-bar-wrap">
+                <div class="dm-bar" style="height:40%"></div>
+                <div class="dm-bar" style="height:60%"></div>
+                <div class="dm-bar" style="height:45%"></div>
+                <div class="dm-bar" style="height:80%"></div>
+                <div class="dm-bar" style="height:65%"></div>
+                <div class="dm-bar accent" style="height:90%"></div>
+                <div class="dm-bar accent" style="height:75%"></div>
+              </div>
+              <div class="dm-chart-label">Gelöste Tickets pro Woche</div>
+            </div>
+          </div>
+        </div>
+        <div class="hl-text">
+          <div class="section-eyebrow">Dashboard</div>
+          <h2>Einfach zu bedienen, mächtig genug für dein Team</h2>
+          <p>Das Support Hero Dashboard gibt dir und deinem Team einen sofortigen Überblick über alle wichtigen Kennzahlen — ohne Daten-Jonglage.</p>
+          <ul class="feature-check-list">
+            <li>Echtzeit-KPIs & Trendanzeigen</li>
+            <li>Team-Performance pro Agent</li>
+            <li>Kanal-Übersicht auf einen Blick</li>
+            <li>Exportierbare Berichte (CSV, PDF)</li>
+          </ul>
+          <a href="#" class="btn-primary" style="margin-top:28px;display:inline-flex">Dashboard ausprobieren →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ SUPPORT ELEMENTS (Grid) ═══ -->
+  <section class="elements-section bg-soft">
+    <div class="container">
+      <div class="section-eyebrow">Support-Bausteine</div>
+      <h2 class="section-h2">CX-optimierte Elemente für jeden Use Case</h2>
+      <p class="section-sub">Fertige Bausteine, die deinen Support sofort produktiver machen.</p>
+      <div class="elements-grid">
+        <div class="el-card">
+          <div class="el-icon">⏱️</div>
+          <div class="el-name">SLA-Warnungen</div>
+          <div class="el-desc">Verpasse nie wieder eine Antwortfrist</div>
+        </div>
+        <div class="el-card">
+          <div class="el-icon">🏷️</div>
+          <div class="el-name">Ticket-Tags</div>
+          <div class="el-desc">Kategorisiere und filtere automatisch</div>
+        </div>
+        <div class="el-card">
+          <div class="el-icon">🔀</div>
+          <div class="el-name">Auto-Routing</div>
+          <div class="el-desc">Tickets direkt an den richtigen Agenten</div>
+        </div>
+        <div class="el-card">
+          <div class="el-icon">📋</div>
+          <div class="el-name">Antwortvorlagen</div>
+          <div class="el-desc">Schnellantworten für häufige Fragen</div>
+        </div>
+        <div class="el-card">
+          <div class="el-icon">↩️</div>
+          <div class="el-name">Retourenportal</div>
+          <div class="el-desc">Self-Service für deine Kunden</div>
+        </div>
+        <div class="el-card">
+          <div class="el-icon">📊</div>
+          <div class="el-name">CSAT-Umfragen</div>
+          <div class="el-desc">Automatisch nach jeder Lösung</div>
+        </div>
+        <div class="el-card">
+          <div class="el-icon">🔔</div>
+          <div class="el-name">Eskalations-Flows</div>
+          <div class="el-desc">Kein Ticket fällt durch die Raster</div>
+        </div>
+        <div class="el-card">
+          <div class="el-icon">📦</div>
+          <div class="el-name">Bestellstatus-Tracking</div>
+          <div class="el-desc">Direkte Shop-Anbindung</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ OMNICHANNEL (Mobile Design equivalent) ═══ -->
+  <section class="highlight-section">
+    <div class="container">
+      <div class="hl-inner reverse">
+        <div class="hl-text">
+          <div class="section-eyebrow">Omnichannel</div>
+          <h2>Alle Kanäle. Eine Inbox. Null Chaos.</h2>
+          <p>Egal ob deine Kunden per WhatsApp, E-Mail, Instagram oder Facebook schreiben — Support Hero bündelt alles in einem einzigen, übersichtlichen Posteingang.</p>
+          <ul class="feature-check-list">
+            <li>WhatsApp Business API</li>
+            <li>E-Mail (Gmail, Outlook, SMTP)</li>
+            <li>Instagram Direct Messages</li>
+            <li>Facebook Messenger</li>
+            <li>Live-Chat Widget für deinen Shop</li>
+            <li>Kanäle kanalübergreifend verknüpfen</li>
+          </ul>
+        </div>
+        <div class="hl-visual">
+          <div class="channels-visual">
+            <div class="ch-center">
+              <div class="ch-hub">⚡</div>
+              <div class="ch-label">Support Hero</div>
+            </div>
+            <div class="ch-items">
+              <div class="ch-item" style="--c:#25D366">💬 WhatsApp</div>
+              <div class="ch-item" style="--c:#EA4335">📧 Gmail</div>
+              <div class="ch-item" style="--c:#E1306C">📸 Instagram</div>
+              <div class="ch-item" style="--c:#1877F2">📘 Facebook</div>
+              <div class="ch-item" style="--c:#6366F1">💬 Live-Chat</div>
+              <div class="ch-item" style="--c:#0369A1">📧 Outlook</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ SPEED / PERFORMANCE ═══ -->
+  <section class="perf-section bg-soft">
+    <div class="container">
+      <div class="section-eyebrow">Performance</div>
+      <h2 class="section-h2">Blitzschnell. Immer verfügbar.</h2>
+      <p class="section-sub">Support Hero ist auf Geschwindigkeit und Zuverlässigkeit ausgelegt — damit dein Kundenservice nie schläft.</p>
+      <div class="perf-grid">
+        <div class="perf-card">
+          <div class="perf-icon">⚡</div>
+          <h3>Antwort in &lt; 3 Sek.</h3>
+          <p>Der KI-Agent antwortet schneller als jeder menschliche Agent — messbar und konstant.</p>
+        </div>
+        <div class="perf-card">
+          <div class="perf-icon">🔒</div>
+          <h3>DSGVO-konform</h3>
+          <p>Alle Daten verarbeitet in der EU. ISO 27001 zertifiziert. Vollständige Datenschutz-Compliance.</p>
+        </div>
+        <div class="perf-card">
+          <div class="perf-icon">🌐</div>
+          <h3>99.9% Uptime SLA</h3>
+          <p>Garantierte Verfügbarkeit mit globalem CDN und automatischem Failover.</p>
+        </div>
+        <div class="perf-card">
+          <div class="perf-icon">🔌</div>
+          <h3>API & Webhooks</h3>
+          <p>Support Hero ist der einzige KI-Support, der vollständig in deinen bestehenden Tech-Stack integrierbar ist — via REST API & Webhooks.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ TEMPLATES / VORLAGEN ═══ -->
+  <section class="templates-section" id="vorlagen">
+    <div class="container">
+      <div class="section-eyebrow">Vorlagen</div>
+      <h2 class="section-h2">100+ Antwortvorlagen & Support-Flows</h2>
+      <p class="section-sub">Wähle eine Vorlage aus, passe sie an dein Business an und starte sofort — ohne Setup-Aufwand.</p>
+      <div class="templates-grid">
+        <div class="tpl-card">
+          <div class="tpl-preview" style="background: linear-gradient(135deg,#EEF2FF,#C7D2FE)">
+            <div class="tpl-mock-line" style="width:70%"></div>
+            <div class="tpl-mock-line" style="width:50%"></div>
+            <div class="tpl-mock-line" style="width:85%"></div>
+          </div>
+          <div class="tpl-info">
+            <div class="tpl-name">Bestellstatus-Antwort</div>
+            <div class="tpl-cat">Versand & Tracking</div>
+          </div>
+        </div>
+        <div class="tpl-card">
+          <div class="tpl-preview" style="background: linear-gradient(135deg,#F0FDF4,#A7F3D0)">
+            <div class="tpl-mock-line" style="width:60%"></div>
+            <div class="tpl-mock-line" style="width:80%"></div>
+            <div class="tpl-mock-line" style="width:45%"></div>
+          </div>
+          <div class="tpl-info">
+            <div class="tpl-name">Retoure einleiten</div>
+            <div class="tpl-cat">Retourenmanagement</div>
+          </div>
+        </div>
+        <div class="tpl-card">
+          <div class="tpl-preview" style="background: linear-gradient(135deg,#FFF7ED,#FDE68A)">
+            <div class="tpl-mock-line" style="width:75%"></div>
+            <div class="tpl-mock-line" style="width:55%"></div>
+            <div class="tpl-mock-line" style="width:90%"></div>
+          </div>
+          <div class="tpl-info">
+            <div class="tpl-name">Reklamation annehmen</div>
+            <div class="tpl-cat">Beschwerdemanagement</div>
+          </div>
+        </div>
+        <div class="tpl-card">
+          <div class="tpl-preview" style="background: linear-gradient(135deg,#F0F9FF,#BAE6FD)">
+            <div class="tpl-mock-line" style="width:65%"></div>
+            <div class="tpl-mock-line" style="width:80%"></div>
+            <div class="tpl-mock-line" style="width:40%"></div>
+          </div>
+          <div class="tpl-info">
+            <div class="tpl-name">Größentausch-Flow</div>
+            <div class="tpl-cat">Umtausch & Varianten</div>
+          </div>
+        </div>
+        <div class="tpl-card">
+          <div class="tpl-preview" style="background: linear-gradient(135deg,#FFF1F2,#FECACA)">
+            <div class="tpl-mock-line" style="width:55%"></div>
+            <div class="tpl-mock-line" style="width:75%"></div>
+            <div class="tpl-mock-line" style="width:60%"></div>
+          </div>
+          <div class="tpl-info">
+            <div class="tpl-name">Stornierung abwickeln</div>
+            <div class="tpl-cat">Bestellverwaltung</div>
+          </div>
+        </div>
+        <div class="tpl-card tpl-cta">
+          <div class="tpl-more-icon">+</div>
+          <div class="tpl-more-text">95+ weitere Vorlagen</div>
+          <a href="#" class="btn-primary" style="margin-top:12px">Alle ansehen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ TESTIMONIALS ═══ -->
+  <section class="testimonials-section bg-soft">
+    <div class="container">
+      <div class="section-eyebrow">Kundenstimmen</div>
+      <h2 class="section-h2">500+ Shops können nicht irren</h2>
+      <div class="testimonials-grid">
+        <div class="t-card">
+          <div class="t-stars">★★★★★</div>
+          <p>"Sehr einfach einzurichten, erstklassiger Kundensupport vom Support Hero Team. In 2 Stunden war alles live."</p>
+          <div class="t-author">
+            <div class="t-av" style="background:#6366F1">HK</div>
+            <div><div class="t-name">Hannah K.</div><div class="t-shop">Hituttikids</div></div>
+          </div>
+        </div>
+        <div class="t-card">
+          <div class="t-stars">★★★★★</div>
+          <p>"12% Anstieg unserer Wiederbestellrate seit wir mit Support Hero automatisiert antworten. Kunden sind schneller zufrieden."</p>
+          <div class="t-author">
+            <div class="t-av" style="background:#10B981">CC</div>
+            <div><div class="t-name">Chris C.</div><div class="t-shop">Coockiechips Shop</div></div>
+          </div>
+        </div>
+        <div class="t-card">
+          <div class="t-stars">★★★★★</div>
+          <p>"Tolle Vorlagen, großartiges Preis-Leistungs-Verhältnis. Wir haben unseren Support-Aufwand um 60% reduziert."</p>
+          <div class="t-author">
+            <div class="t-av" style="background:#F59E0B">HY</div>
+            <div><div class="t-name">Hystar Team</div><div class="t-shop">Hystar Sports</div></div>
+          </div>
+        </div>
+        <div class="t-card">
+          <div class="t-stars">★★★★★</div>
+          <p>"Ermöglicht unserer kleinen Team, professionellen Support zu bieten — ohne technische Kenntnisse. Genial."</p>
+          <div class="t-author">
+            <div class="t-av" style="background:#E11D48">MA</div>
+            <div><div class="t-name">Marina A.</div><div class="t-shop">An Act of Dog</div></div>
+          </div>
+        </div>
+        <div class="t-card">
+          <div class="t-stars">★★★★★</div>
+          <p>"Professionelle Anpassung der Antworten — Support Hero erzählt unsere Markengeschichte, auch im Support."</p>
+          <div class="t-author">
+            <div class="t-av" style="background:#0369A1">BC</div>
+            <div><div class="t-name">Bluecooler Team</div><div class="t-shop">Bluecooler GmbH</div></div>
+          </div>
+        </div>
+        <div class="t-card">
+          <div class="t-stars">★★★★★</div>
+          <p>"Benutzerfreundliche Oberfläche, schneller Support vom Team selbst. Wir hätten früher wechseln sollen."</p>
+          <div class="t-author">
+            <div class="t-av" style="background:#7C3AED">IM</div>
+            <div><div class="t-name">Imalent Store</div><div class="t-shop">Imalent DE</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CASE STUDY ═══ -->
+  <section class="case-study-section">
+    <div class="container">
+      <div class="cs-inner">
+        <div class="cs-text">
+          <div class="cs-tag">Case Study</div>
+          <h2>FashionStore GmbH steigert Kundenzufriedenheit um 212% in 3 Monaten mit Support Hero</h2>
+          <p>Anna und Marcus Krause betreiben einen der wachstumsstärksten Mode-Shops in Deutschland. Bevor sie Support Hero nutzten, war ihr Team von Anfragen überwältigt — besonders nach der Sale-Saison.</p>
+          <blockquote>"Wir haben in 3 Monaten mehr Tickets gelöst als vorher in einem ganzen Jahr — und das mit demselben Team."</blockquote>
+          <div class="cs-authors">
+            <div class="cs-av">AK</div>
+            <div>
+              <div class="cs-aname">Anna Krause</div>
+              <div class="cs-arole">Head of CX, FashionStore GmbH</div>
+            </div>
+          </div>
+          <a href="#" class="btn-primary" style="margin-top:24px;display:inline-flex">Case Study lesen →</a>
+        </div>
+        <div class="cs-stats">
+          <div class="cs-stat">
+            <div class="cs-big">212%</div>
+            <div class="cs-slabel">mehr gelöste Tickets in 3 Monaten</div>
+          </div>
+          <div class="cs-stat">
+            <div class="cs-big">87%</div>
+            <div class="cs-slabel">KI-Lösungsrate ohne menschlichen Eingriff</div>
+          </div>
+          <div class="cs-stat">
+            <div class="cs-big">4.9 ★</div>
+            <div class="cs-slabel">Durchschnittliche Kundenbewertung</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ COMPARISON ═══ -->
+  <section class="comparison-section bg-soft">
+    <div class="container">
+      <div class="section-eyebrow">Vergleich</div>
+      <h2 class="section-h2">Support Hero vs. klassischer Helpdesk</h2>
+      <p class="section-sub">Warum immer mehr Shops auf Support Hero umsteigen.</p>
+      <div class="comparison-table">
+        <div class="ct-header">
+          <div class="ct-col label"></div>
+          <div class="ct-col sh">⚡ Support Hero</div>
+          <div class="ct-col other">Klassischer Helpdesk</div>
+        </div>
+        <div class="ct-row">
+          <div class="ct-col label">KI-Automatisierung</div>
+          <div class="ct-col sh"><span class="ct-good">Nativ integriert</span></div>
+          <div class="ct-col other"><span class="ct-bad">Teures Add-on</span></div>
+        </div>
+        <div class="ct-row">
+          <div class="ct-col label">Retourenmanagement</div>
+          <div class="ct-col sh"><span class="ct-good">Vollständig integriert</span></div>
+          <div class="ct-col other"><span class="ct-bad">Separat buchen</span></div>
+        </div>
+        <div class="ct-row">
+          <div class="ct-col label">Setup-Zeit</div>
+          <div class="ct-col sh"><span class="ct-good">Unter 1 Stunde</span></div>
+          <div class="ct-col other"><span class="ct-bad">Wochen</span></div>
+        </div>
+        <div class="ct-row">
+          <div class="ct-col label">Ressourcen</div>
+          <div class="ct-col sh"><span class="ct-good">Kein IT nötig</span></div>
+          <div class="ct-col other"><span class="ct-bad">IT-Abteilung erforderlich</span></div>
+        </div>
+        <div class="ct-row">
+          <div class="ct-col label">Shopify/WooCommerce</div>
+          <div class="ct-col sh"><span class="ct-good">Native Integration</span></div>
+          <div class="ct-col other"><span class="ct-bad">Manuelle Konfiguration</span></div>
+        </div>
+        <div class="ct-row">
+          <div class="ct-col label">Preis</div>
+          <div class="ct-col sh"><span class="ct-good">Ab €0 / Monat</span></div>
+          <div class="ct-col other"><span class="ct-bad">Ab €150 / Monat</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ INTEGRATIONS ═══ -->
+  <section class="integrations-section" id="integrationen">
+    <div class="container">
+      <div class="section-eyebrow">Integrationen</div>
+      <h2 class="section-h2">100+ Integrationen für deinen Stack</h2>
+      <p class="section-sub">Support Hero verbindet sich nahtlos mit deinen bestehenden Tools — ohne technisches Setup.</p>
+      <div class="int-grid">
+        <div class="int-card"><div class="int-emoji">💬</div><div class="int-name">WhatsApp</div></div>
+        <div class="int-card"><div class="int-emoji">📧</div><div class="int-name">Gmail</div></div>
+        <div class="int-card"><div class="int-emoji">🛍️</div><div class="int-name">Shopify</div></div>
+        <div class="int-card"><div class="int-emoji">🛒</div><div class="int-name">WooCommerce</div></div>
+        <div class="int-card"><div class="int-emoji">📦</div><div class="int-name">DHL</div></div>
+        <div class="int-card"><div class="int-emoji">💳</div><div class="int-name">Stripe</div></div>
+        <div class="int-card"><div class="int-emoji">📸</div><div class="int-name">Instagram</div></div>
+        <div class="int-card"><div class="int-emoji">📘</div><div class="int-name">Facebook</div></div>
+        <div class="int-card"><div class="int-emoji">🏪</div><div class="int-name">Amazon</div></div>
+        <div class="int-card"><div class="int-emoji">💰</div><div class="int-name">PayPal</div></div>
+        <div class="int-card"><div class="int-emoji">🎁</div><div class="int-name">Klarna</div></div>
+        <div class="int-card"><div class="int-emoji">⚙️</div><div class="int-name">Zapier</div></div>
+        <div class="int-card"><div class="int-emoji">📮</div><div class="int-name">Outlook</div></div>
+        <div class="int-card"><div class="int-emoji">🚚</div><div class="int-name">UPS</div></div>
+        <div class="int-card"><div class="int-emoji">📦</div><div class="int-name">Hermes</div></div>
+        <div class="int-card int-more"><div class="int-emoji">+</div><div class="int-name">85 weitere</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ DUAL CTA (wie gempages "Start selling") ═══ -->
+  <section class="dual-cta-section">
+    <div class="container">
+      <div class="dual-cta-grid">
+        <div class="dcta-card left">
+          <div class="dcta-eyebrow">Neu bei Shopify?</div>
+          <h3>Erstelle deinen Shop für 1 €/Monat in den ersten 3 Monaten</h3>
+          <a href="#" class="btn-outline">Shopify Store erstellen →</a>
+        </div>
+        <div class="dcta-card right">
+          <div class="dcta-eyebrow">Bereits im E-Commerce?</div>
+          <h3>Starte Support Hero noch heute — kostenlos, ohne Kreditkarte</h3>
+          <a href="#" class="btn-primary">Support Hero starten →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer" id="kontakt">
+    <div class="footer-top container">
+      <div class="footer-brand">
+        <div class="logo footer-logo">
+          <div class="logo-mark">⚡</div>
+          <span>Support<strong>Hero</strong></span>
+        </div>
+        <p>KI-gestützter Kundensupport für moderne E-Commerce-Shops. Automatisiere, optimiere, begeistere.</p>
+        <div class="footer-newsletter">
+          <p class="nl-label">CX-Tipps & Updates per E-Mail</p>
+          <div class="nl-form">
+            <input type="email" placeholder="deine@email.de" />
+            <button class="btn-primary">Abonnieren</button>
+          </div>
+        </div>
+        <div class="footer-socials">
+          <a href="#" aria-label="Twitter">𝕏</a>
+          <a href="#" aria-label="LinkedIn">in</a>
+          <a href="#" aria-label="YouTube">▶</a>
+          <a href="#" aria-label="Instagram">📷</a>
+        </div>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <div class="fc-title">Ressourcen</div>
+          <a href="#">Support Academy</a>
+          <a href="#">YouTube Tutorials</a>
+          <a href="#">Community Forum</a>
+          <a href="#">Blog</a>
+          <a href="#">API Dokumentation</a>
+        </div>
+        <div class="footer-col">
+          <div class="fc-title">Unternehmen</div>
+          <a href="#">Über uns</a>
+          <a href="#">Karriere</a>
+          <a href="#">Presse</a>
+          <a href="#">Datenschutz</a>
+          <a href="#">AGB</a>
+          <a href="#">Impressum</a>
+        </div>
+        <div class="footer-col">
+          <div class="fc-title">Lösungen</div>
+          <a href="#">KI-Agent</a>
+          <a href="#">Unified Inbox</a>
+          <a href="#">Retourenmanagement</a>
+          <a href="#">Analytics</a>
+          <a href="#">Team & Rollen</a>
+        </div>
+        <div class="footer-col">
+          <div class="fc-title">Support</div>
+          <a href="#">Hilfe-Center</a>
+          <a href="#">Kontakt</a>
+          <a href="#">System Status</a>
+          <a href="#">FAQ</a>
+          <a href="#">Promotions</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      <span>2024–2026 © Support Hero. Alle Rechte vorbehalten.</span>
       <div class="footer-legal">
         <a href="#">Datenschutz</a>
         <a href="#">AGB</a>
         <a href="#">Impressum</a>
+        <a href="#">Cookie-Einstellungen</a>
       </div>
     </div>
   </footer>
 
   <script>
+    // Mobile Menu
     function toggleMenu() {
-      const m = document.getElementById('mobileMenu');
-      m.classList.toggle('open');
+      document.getElementById('mobileMenu').classList.toggle('open');
     }
+    // Nav shadow on scroll
+    window.addEventListener('scroll', () => {
+      document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 10);
+    });
     // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', e => {
-        const target = document.querySelector(a.getAttribute('href'));
-        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+        const t = document.querySelector(a.getAttribute('href'));
+        if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
       });
     });
-    // Nav scroll shadow
-    window.addEventListener('scroll', () => {
-      document.querySelector('.nav-wrap').classList.toggle('scrolled', window.scrollY > 10);
+    // Fade in on scroll
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.three-col-card, .ai-card, .el-card, .t-card, .perf-card, .tpl-card, .int-card').forEach(el => {
+      el.classList.add('fade-up');
+      observer.observe(el);
     });
   </script>
 </body>
