@@ -329,15 +329,19 @@
   <nav class="nav-pill">
     <a href="index.html" class="nav-logo">
       <img src="supporthero.jpeg" alt="SupportHero" class="nav-logo-img" />
-      <span class="nav-logo-text"><strong>Support</strong>Hero</span>
+      <span class="nav-logo-text"><strong>SupportHero</strong></span>
     </a>
     <ul class="nav-links">
-      <li><a href="integrations.html" style="color:#6366F1;font-weight:700">Integrationen</a></li>
-      <li><a href="kontakt.html">Kontakt</a></li>
-      <li><a href="#">Preise</a></li>
+      <li><a href="integrations.html" style="color:#6366F1;font-weight:700" data-i18n="nav.integrations">Integrationen</a></li>
+      <li><a href="kontakt.html" data-i18n="nav.contact">Kontakt</a></li>
+      <li><a href="preise.html" data-i18n="nav.pricing">Preise</a></li>
     </ul>
     <div class="nav-cta">
-      <a href="#" class="btn-primary nav-btn">Kostenlos starten</a>
+      <div class="lang-toggle">
+        <button class="lang-toggle-btn active" data-lang="de" onclick="setLang('de')">DE</button>
+        <button class="lang-toggle-btn" data-lang="en" onclick="setLang('en')">EN</button>
+      </div>
+      <a href="#" class="btn-primary nav-btn" data-i18n="nav.cta">Kostenlos starten</a>
     </div>
   </nav>
 </header>
@@ -365,7 +369,6 @@
     <div class="int-logo-strip-item"><img src="logos/channels/gmail.svg" alt="Gmail" /></div>
     <div class="int-logo-strip-item"><img src="logos/outlook.jpeg" alt="Outlook" /></div>
     <div class="int-logo-strip-item"><img src="logos/shopify.png" alt="Shopify" /></div>
-    <div class="int-logo-strip-item"><img src="logos/woocommerce.png" alt="WooCommerce" /></div>
     <div class="int-logo-strip-item"><img src="logos/paypal.png" alt="PayPal" /></div>
     <div class="int-logo-strip-item"><img src="logos/airwallex.png" alt="Airwallex" /></div>
     <div class="int-logo-strip-item"><img src="logos/mollie.png" alt="Mollie" /></div>
@@ -463,31 +466,6 @@
           <div class="icard-action"><a href="#" class="icard-btn">Verbinden →</a></div>
         </div>
 
-        <div class="icard" data-cat="E-Commerce">
-          <div class="icard-top">
-            <div class="icard-logo"><img src="logos/woocommerce.png" alt="WooCommerce" /></div>
-            <div class="icard-meta">
-              <div class="icard-name">WooCommerce</div>
-              <div class="icard-cat">E-Commerce</div>
-            </div>
-          </div>
-          <span class="icard-badge">Bald</span>
-          <div class="icard-desc">WordPress-basierter Shop anbinden. Bestelldaten und Kundenverlauf im Support-Kontext.</div>
-          <div class="icard-action"><span class="icard-btn-soon">In Kürze verfügbar</span></div>
-        </div>
-
-        <div class="icard" data-cat="E-Commerce">
-          <div class="icard-top">
-            <div class="icard-logo"><img src="https://cdn.worldvectorlogo.com/logos/shopware-2.svg" alt="Shopware" onerror="this.style.display='none';this.parentNode.innerHTML='<span style=font-size:22px;font-weight:800;color:#189EFF>SW</span>'" /></div>
-            <div class="icard-meta">
-              <div class="icard-name">Shopware</div>
-              <div class="icard-cat">E-Commerce</div>
-            </div>
-          </div>
-          <span class="icard-badge">Bald</span>
-          <div class="icard-desc">Shopware 6 Storefront anbinden. Vollständige Bestellübersicht im Support-Posteingang.</div>
-          <div class="icard-action"><span class="icard-btn-soon">In Kürze verfügbar</span></div>
-        </div>
 
       </div>
     </div>
@@ -726,7 +704,7 @@
       <div class="footer-brand">
         <a href="index.html" class="footer-logo">
           <img src="supporthero.jpeg" alt="SupportHero" class="footer-logo-img" />
-          <span class="footer-logo-text"><strong>Support</strong>Hero</span>
+          <span class="footer-logo-text"><strong>SupportHero</strong></span>
         </a>
         <p class="footer-tagline">KI-gestützter Kundenservice für E-Commerce.<br>Automatisiere Anfragen &amp; Retouren.<br>Ohne Programmierung.</p>
         <div class="footer-social">
@@ -746,9 +724,6 @@
       </div>
       <div class="footer-col">
         <div class="footer-col-title">Ressourcen</div>
-        <a href="#">Dokumentation</a>
-        <a href="#">Video-Tutorials</a>
-        <a href="#">Community</a>
         <a href="#" class="footer-link-bold">Shopify App</a>
       </div>
       <div class="footer-col">
@@ -780,10 +755,10 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span class="footer-copy">2024 – 2026 © SupportHero GmbH</span>
+      <span class="footer-copy">2024 – 2026 © SupportHero LLC</span>
       <a href="index.html" class="footer-bottom-logo">
         <img src="supporthero.jpeg" alt="SupportHero" class="footer-logo-img" style="width:24px;height:24px" />
-        <span class="footer-logo-text" style="font-size:15px"><strong>Support</strong>Hero</span>
+        <span class="footer-logo-text" style="font-size:15px"><strong>SupportHero</strong></span>
       </a>
     </div>
   </div>
@@ -813,6 +788,6 @@
     });
   });
 </script>
-
+<script src="lang.js"></script>
 </body>
 </html>

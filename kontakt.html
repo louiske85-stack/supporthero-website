@@ -223,15 +223,19 @@
   <nav class="nav-pill">
     <a href="index.html" class="nav-logo">
       <img src="supporthero.jpeg" alt="SupportHero" class="nav-logo-img" />
-      <span class="nav-logo-text"><strong>Support</strong>Hero</span>
+      <span class="nav-logo-text"><strong>SupportHero</strong></span>
     </a>
     <ul class="nav-links">
-      <li><a href="integrations.html">Integrationen</a></li>
-      <li><a href="kontakt.html" style="color:#6366F1;font-weight:700">Kontakt</a></li>
-      <li><a href="preise.html">Preise</a></li>
+      <li><a href="integrations.html" data-i18n="nav.integrations">Integrationen</a></li>
+      <li><a href="kontakt.html" style="color:#6366F1;font-weight:700" data-i18n="nav.contact">Kontakt</a></li>
+      <li><a href="preise.html" data-i18n="nav.pricing">Preise</a></li>
     </ul>
     <div class="nav-cta">
-      <a href="#" class="btn-primary nav-btn">Kostenlos starten</a>
+      <div class="lang-toggle">
+        <button class="lang-toggle-btn active" data-lang="de" onclick="setLang('de')">DE</button>
+        <button class="lang-toggle-btn" data-lang="en" onclick="setLang('en')">EN</button>
+      </div>
+      <a href="#" class="btn-primary nav-btn" data-i18n="nav.cta">Kostenlos starten</a>
     </div>
   </nav>
 </header>
@@ -240,10 +244,10 @@
 <section class="kontakt-hero">
   <div class="kontakt-eyebrow">
     <span class="kontakt-eyebrow-dot"></span>
-    Kontakt
+    <span data-i18n="contact.eyebrow">Kontakt</span>
   </div>
-  <h1>Nimm Kontakt auf</h1>
-  <p>Fragen, Feedback oder einfach mal Hallo — wir sind für dich da.</p>
+  <h1 data-i18n="contact.title">Nimm Kontakt auf</h1>
+  <p data-i18n="contact.sub">Fragen, Feedback oder einfach mal Hallo — wir sind für dich da.</p>
 </section>
 
 <!-- CARDS -->
@@ -252,46 +256,46 @@
     <div class="k-card">
       <div class="k-card-label">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
-        E-Mail
+        <span data-i18n="contact.card1.label">E-Mail</span>
       </div>
       <a href="mailto:hallo@supporthero.co" class="k-card-value">hallo@supporthero.co</a>
-      <span class="k-card-sub">Wir antworten in der Regel innerhalb von 24 Stunden.</span>
+      <span class="k-card-sub" data-i18n="contact.card1.sub">Wir antworten in der Regel innerhalb von 24 Stunden.</span>
     </div>
     <div class="k-card">
       <div class="k-card-label">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-        Live-Chat
+        <span data-i18n="contact.card2.label">Live-Chat</span>
       </div>
-      <span class="k-card-value" style="cursor:default">Direkt in der App</span>
-      <span class="k-card-sub">Mo.–Fr., 9–18 Uhr</span>
+      <span class="k-card-value" style="cursor:default" data-i18n="contact.card2.value">Direkt in der App</span>
+      <span class="k-card-sub" data-i18n="contact.card2.sub">Mo.–Fr., 9–18 Uhr</span>
     </div>
   </div>
 </section>
 
 <!-- FORM -->
 <section class="kontakt-form-section">
-  <div class="section-divider"><span>oder schreib uns direkt</span></div>
+  <div class="section-divider"><span data-i18n="contact.divider">oder schreib uns direkt</span></div>
   <div class="kontakt-form-inner">
     <div class="form-row">
       <div class="form-group">
-        <label>Vorname</label>
-        <input type="text" placeholder="Max" />
+        <label data-i18n="contact.form.firstname">Vorname</label>
+        <input type="text" data-i18n-ph="contact.form.firstname.ph" placeholder="Max" />
       </div>
       <div class="form-group">
-        <label>Nachname</label>
-        <input type="text" placeholder="Mustermann" />
+        <label data-i18n="contact.form.lastname">Nachname</label>
+        <input type="text" data-i18n-ph="contact.form.lastname.ph" placeholder="Mustermann" />
       </div>
     </div>
     <div class="form-group">
-      <label>E-Mail-Adresse</label>
-      <input type="email" placeholder="max@meinshop.de" />
+      <label data-i18n="contact.form.email">E-Mail-Adresse</label>
+      <input type="email" data-i18n-ph="contact.form.email.ph" placeholder="max@meinshop.de" />
     </div>
     <div class="form-group">
-      <label>Nachricht</label>
-      <textarea placeholder="Wie können wir dir helfen?"></textarea>
+      <label data-i18n="contact.form.message">Nachricht</label>
+      <textarea data-i18n-ph="contact.form.message.ph" placeholder="Wie können wir dir helfen?"></textarea>
     </div>
-    <button class="form-submit">Nachricht senden</button>
-    <p class="form-note">Wir geben deine Daten niemals an Dritte weiter.</p>
+    <button class="form-submit" data-i18n="contact.form.submit">Nachricht senden</button>
+    <p class="form-note" data-i18n="contact.form.note">Wir geben deine Daten niemals an Dritte weiter.</p>
   </div>
 </section>
 
@@ -302,9 +306,9 @@
       <div class="footer-brand">
         <a href="index.html" class="footer-logo">
           <img src="supporthero.jpeg" alt="SupportHero" class="footer-logo-img" />
-          <span class="footer-logo-text"><strong>Support</strong>Hero</span>
+          <span class="footer-logo-text"><strong>SupportHero</strong></span>
         </a>
-        <p class="footer-tagline">KI-gestützter Kundenservice für E-Commerce.<br>Automatisiere Anfragen &amp; Retouren.<br>Ohne Programmierung.</p>
+        <p class="footer-tagline" data-i18n="footer.tagline">KI-gestützter Kundenservice für E-Commerce.<br>Automatisiere Anfragen &amp; Retouren.<br>Ohne Programmierung.</p>
         <div class="footer-social">
           <a href="#" class="footer-social-icon" title="Facebook">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
@@ -321,21 +325,18 @@
         </div>
       </div>
       <div class="footer-col">
-        <div class="footer-col-title">Ressourcen</div>
-        <a href="#">Dokumentation</a>
-        <a href="#">Video-Tutorials</a>
-        <a href="#">Community</a>
-        <a href="#" class="footer-link-bold">Shopify App</a>
+        <div class="footer-col-title" data-i18n="footer.col1.title">Ressourcen</div>
+        <a href="#" class="footer-link-bold" data-i18n="footer.shopify">Shopify App</a>
       </div>
       <div class="footer-col">
-        <div class="footer-col-title">Unternehmen</div>
-        <a href="#">AGB</a>
-        <a href="#">Datenschutz</a>
-        <a href="#">Impressum</a>
-        <a href="#">FAQs</a>
+        <div class="footer-col-title" data-i18n="footer.col2.title">Unternehmen</div>
+        <a href="#" data-i18n="footer.agb">AGB</a>
+        <a href="#" data-i18n="footer.privacy">Datenschutz</a>
+        <a href="#" data-i18n="footer.imprint">Impressum</a>
+        <a href="#" data-i18n="footer.faqs">FAQs</a>
       </div>
       <div class="footer-col footer-newsletter-col">
-        <div class="footer-col-title">Newsletter</div>
+        <div class="footer-col-title" data-i18n="footer.col3.title">Newsletter</div>
         <div class="footer-newsletter-img">
           <div class="footer-guide-card">
             <div class="footer-guide-cover">
@@ -348,22 +349,23 @@
             </div>
           </div>
         </div>
-        <p class="footer-newsletter-label">Abonniere Support-Tipps &amp; E-Commerce Best Practices</p>
+        <p class="footer-newsletter-label" data-i18n="footer.newsletter.label">Abonniere Support-Tipps &amp; E-Commerce Best Practices</p>
         <div class="footer-newsletter-form">
-          <input type="email" placeholder="Deine E-Mail-Adresse" />
-          <button class="footer-submit-btn">Absenden</button>
+          <input type="email" data-i18n-ph="footer.newsletter.ph" placeholder="Deine E-Mail-Adresse" />
+          <button class="footer-submit-btn" data-i18n="footer.newsletter.btn">Absenden</button>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <span class="footer-copy">2024 – 2026 © SupportHero GmbH</span>
+      <span class="footer-copy">2024 – 2026 © SupportHero LLC</span>
       <a href="index.html" class="footer-bottom-logo">
         <img src="supporthero.jpeg" alt="SupportHero" class="footer-logo-img" style="width:24px;height:24px" />
-        <span class="footer-logo-text" style="font-size:15px"><strong>Support</strong>Hero</span>
+        <span class="footer-logo-text" style="font-size:15px"><strong>SupportHero</strong></span>
       </a>
     </div>
   </div>
 </footer>
 
+<script src="lang.js"></script>
 </body>
 </html>

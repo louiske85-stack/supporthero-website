@@ -187,7 +187,35 @@ a { text-decoration: none; color: inherit; }
   display: flex;
   align-items: center;
   flex-shrink: 0;
+  gap: 10px;
   margin-left: 24px;
+}
+
+/* Language toggle */
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  background: #F1F5F9;
+  border-radius: 100px;
+  padding: 3px;
+  gap: 1px;
+}
+.lang-toggle-btn {
+  padding: 5px 11px;
+  border-radius: 100px;
+  border: none;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  background: transparent;
+  color: #94A3B8;
+  font-family: inherit;
+  transition: all 0.15s;
+}
+.lang-toggle-btn.active {
+  background: #fff;
+  color: #0F172A;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
 .nav-btn {
